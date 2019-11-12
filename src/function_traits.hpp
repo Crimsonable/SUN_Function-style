@@ -36,7 +36,8 @@ namespace _Sun {
         static constexpr std::size_t argsize = sizeof...(Args);
         template <std::size_t I>
         struct argument {
-            static_assert(I < argsize, "Index out of range");
+            static_assert(argsize > 0, "function has no args!");
+            static_assert(I < argsize, "Index out of range!");
             using type = typename std::tuple_element<I, std::tuple<Args...>>::type;
         };
     };
@@ -85,9 +86,9 @@ struct rua {
 };
 
 int main() {
-    using traits = _Sun::function_traits<decltype(&rua::k)>;
-    std::cout << _Sun::type_name<decltype(&rua::s)>() << std::endl;
+    using traits = _Sun::function_traits<decltype(g)>;
+    std::cout << traits::argsize << std::endl;
+    std::cout << std::is_reference_v<traits::argument<1>::type> << std::endl;
     system("pause");
     return 1;
-}
-*/
+}*/

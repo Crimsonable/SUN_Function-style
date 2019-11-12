@@ -15,7 +15,7 @@
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
-            "miDebuggerPath": "G:\\buildtools\\TDM-gcc\\bin\\gdb.exe",
+            "miDebuggerPath": "G:\\buildtools\\rua\\bin\\gdb.exe",
             "setupCommands": [
                 {
                     "description": "为 gdb 启用整齐打印",
